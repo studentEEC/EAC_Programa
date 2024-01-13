@@ -28,6 +28,8 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
+			System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+			System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
 			this.btn_Calculate = new System.Windows.Forms.Button();
 			this.rd_Serie = new System.Windows.Forms.RadioButton();
 			this.rd_parallel = new System.Windows.Forms.RadioButton();
@@ -42,8 +44,12 @@
 			this.btn_Generator = new System.Windows.Forms.Button();
 			this.txtAmplitude = new System.Windows.Forms.TextBox();
 			this.txtFrequency = new System.Windows.Forms.TextBox();
+			this.label3 = new System.Windows.Forms.Label();
+			this.lblResResistor = new System.Windows.Forms.Label();
+			this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
 			this.gB_Resistors.SuspendLayout();
 			this.gB_SignalGenerator.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// btn_Calculate
@@ -60,7 +66,7 @@
 			// rd_Serie
 			// 
 			this.rd_Serie.AutoSize = true;
-			this.rd_Serie.Location = new System.Drawing.Point(20, 153);
+			this.rd_Serie.Location = new System.Drawing.Point(11, 112);
 			this.rd_Serie.Name = "rd_Serie";
 			this.rd_Serie.Size = new System.Drawing.Size(49, 17);
 			this.rd_Serie.TabIndex = 1;
@@ -71,7 +77,7 @@
 			// rd_parallel
 			// 
 			this.rd_parallel.AutoSize = true;
-			this.rd_parallel.Location = new System.Drawing.Point(86, 153);
+			this.rd_parallel.Location = new System.Drawing.Point(77, 112);
 			this.rd_parallel.Name = "rd_parallel";
 			this.rd_parallel.Size = new System.Drawing.Size(63, 17);
 			this.rd_parallel.TabIndex = 2;
@@ -81,6 +87,8 @@
 			// 
 			// gB_Resistors
 			// 
+			this.gB_Resistors.Controls.Add(this.lblResResistor);
+			this.gB_Resistors.Controls.Add(this.label3);
 			this.gB_Resistors.Controls.Add(this.btn_removeResistor);
 			this.gB_Resistors.Controls.Add(this.btn_AddResistor);
 			this.gB_Resistors.Controls.Add(this.txtResistor);
@@ -135,6 +143,7 @@
 			// 
 			// gB_SignalGenerator
 			// 
+			this.gB_SignalGenerator.Controls.Add(this.chart1);
 			this.gB_SignalGenerator.Controls.Add(this.label2);
 			this.gB_SignalGenerator.Controls.Add(this.label1);
 			this.gB_SignalGenerator.Controls.Add(this.btn_Generator);
@@ -152,18 +161,18 @@
 			this.label2.AutoSize = true;
 			this.label2.Location = new System.Drawing.Point(11, 78);
 			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(56, 13);
+			this.label2.Size = new System.Drawing.Size(72, 13);
 			this.label2.TabIndex = 8;
-			this.label2.Text = "Amplitude:";
+			this.label2.Text = "Amplitude (V):";
 			// 
 			// label1
 			// 
 			this.label1.AutoSize = true;
 			this.label1.Location = new System.Drawing.Point(11, 40);
 			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(63, 13);
+			this.label1.Size = new System.Drawing.Size(82, 13);
 			this.label1.TabIndex = 7;
-			this.label1.Text = "Frequência:";
+			this.label1.Text = "Frequência(Hz):";
 			// 
 			// btn_Generator
 			// 
@@ -178,17 +187,48 @@
 			// 
 			// txtAmplitude
 			// 
-			this.txtAmplitude.Location = new System.Drawing.Point(86, 71);
+			this.txtAmplitude.Location = new System.Drawing.Point(103, 71);
 			this.txtAmplitude.Name = "txtAmplitude";
 			this.txtAmplitude.Size = new System.Drawing.Size(108, 20);
 			this.txtAmplitude.TabIndex = 6;
 			// 
 			// txtFrequency
 			// 
-			this.txtFrequency.Location = new System.Drawing.Point(86, 34);
+			this.txtFrequency.Location = new System.Drawing.Point(103, 33);
 			this.txtFrequency.Name = "txtFrequency";
 			this.txtFrequency.Size = new System.Drawing.Size(108, 20);
 			this.txtFrequency.TabIndex = 5;
+			// 
+			// label3
+			// 
+			this.label3.AutoSize = true;
+			this.label3.Location = new System.Drawing.Point(8, 155);
+			this.label3.Name = "label3";
+			this.label3.Size = new System.Drawing.Size(77, 13);
+			this.label3.TabIndex = 7;
+			this.label3.Text = "R.Equivalente:";
+			// 
+			// lblResResistor
+			// 
+			this.lblResResistor.AutoSize = true;
+			this.lblResResistor.Location = new System.Drawing.Point(85, 157);
+			this.lblResResistor.Name = "lblResResistor";
+			this.lblResResistor.Size = new System.Drawing.Size(0, 13);
+			this.lblResResistor.TabIndex = 8;
+			// 
+			// chart1
+			// 
+			this.chart1.AllowDrop = true;
+			chartArea1.Name = "ChartArea";
+			this.chart1.ChartAreas.Add(chartArea1);
+			legend1.Name = "Legend1";
+			this.chart1.Legends.Add(legend1);
+			this.chart1.Location = new System.Drawing.Point(6, 157);
+			this.chart1.Name = "chart1";
+			this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SeaGreen;
+			this.chart1.Size = new System.Drawing.Size(317, 235);
+			this.chart1.TabIndex = 9;
+			this.chart1.Text = "chart1";
 			// 
 			// Form1
 			// 
@@ -203,6 +243,7 @@
 			this.gB_Resistors.PerformLayout();
 			this.gB_SignalGenerator.ResumeLayout(false);
 			this.gB_SignalGenerator.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
 			this.ResumeLayout(false);
 
 		}
@@ -223,6 +264,9 @@
 		private System.Windows.Forms.TextBox txtAmplitude;
 		private System.Windows.Forms.TextBox txtFrequency;
 		private System.Windows.Forms.Button btn_removeResistor;
+		private System.Windows.Forms.Label lblResResistor;
+		private System.Windows.Forms.Label label3;
+		private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
 	}
 }
 

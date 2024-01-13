@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using System.Windows.Forms.DataVisualization;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace Calculator
 {
@@ -23,21 +25,25 @@ namespace Calculator
 		#region Form Events
 		private void button1_Click(object sender, EventArgs e)
 		{
+			float res = 0;
 			if (rd_parallel.Checked)
 			{
-				resistorParallel(ResistorsList.Count, ResistorsList.ToArray());
+				res = resistorParallel(ResistorsList.Count, ResistorsList.ToArray());
 			}
 			else if (rd_Serie.Checked)
 			{
-				resistorSerie(ResistorsList.Count, ResistorsList.ToArray());
+				res = resistorSerie(ResistorsList.Count, ResistorsList.ToArray());
 			}
+
+			res = (float)Math.Round(res, 2);
+			lblResResistor.Text= res.ToString() + " Ohm";
 		}
 		private void btn_AddResistor_Click(object sender, EventArgs e)
 		{
 			if (txtResistor.Text != null)
 			{
 				listResistors.Items.Add(txtResistor.Text);
-				ResistorsList.Add(float.Parse(txtResistor.Text));
+				ResistorsList.Add(float.Parse(txtResistor.Text.Replace('.', ',')));
 			}
 			txtResistor.Text = "";
 		}
@@ -46,28 +52,30 @@ namespace Calculator
 			foreach (ListViewItem eachItem in listResistors.SelectedItems)
 			{
 				listResistors.Items.Remove(eachItem);
-				ResistorsList.Remove(eachItem.Index);
+				//ResistorsList.Remove();
 			}
 		}
 		private void btn_Generator_Click(object sender, EventArgs e)
 		{
-
+			GenerateSignal(
+				float.Parse(txtFrequency.Text.Replace('.', ',')),
+				float.Parse(txtAmplitude.Text.Replace('.', ',')));
 		}
 		#endregion
 
 
 		#region methods to calculate resistors
-		private double resistorParallel(int n, float[] resistencias)
+		private float resistorParallel(int n, float[] resistencias)
 		{
-			float res_paralelo = 0;
+			double res_paralelo = 0;
 			for (int i = 0; i < n; i++)
 			{
-				//res_paralelo += (1.0 / resistencias[i]);
+				res_paralelo += (1.0 / resistencias[i]);
 			}
-			return (1.0 / res_paralelo);
+			return ((float)(1.0 / res_paralelo));
 		
 		}
-		private double resistorSerie(int n, float[] resistencias)
+		private float resistorSerie(int n, float[] resistencias)
 		{
 			float res_serie = 0;
 			for (int i = 0; i < n; i++)
@@ -80,5 +88,42 @@ namespace Calculator
 
 		#endregion
 
+		#region methods to generate signal
+		private void GenerateSignal(float frequency, float amplitude)
+		{
+			double fase = 0.0;          
+			double period = 1.0 / frequency;
+			
+			ChartArea chartArea = new ChartArea();
+			chartArea.Name = "ChartArea";
+			chartArea.AxisX.Minimum = 0;
+			chartArea.AxisX.Maximum = period;
+			chartArea.AxisY.Minimum = -amplitude;
+			chartArea.AxisY.Maximum = amplitude;
+
+
+			Series series = new Series();
+			series.ChartArea = "ChartArea";
+			series.ChartType = SeriesChartType.Line;
+			series.IsVisibleInLegend = false;
+
+			int points = 50;
+			double sample = period / points;
+
+			for (int i = 0; i < points; i++)
+			{
+				double time = i * sample;
+				double valor = amplitude * Math.Sin(2 * Math.PI * frequency * time + fase);
+				series.Points.AddXY(time, valor);
+			}
+			chart1.ChartAreas.Clear();
+			chart1.ChartAreas.Add(chartArea);
+
+			chart1.Series.Clear();
+			chart1.Series.Add(series);
+			chart1.Size = new System.Drawing.Size(300, 200);
+			
+		}
+		#endregion
 	}
 }

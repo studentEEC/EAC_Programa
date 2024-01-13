@@ -51,8 +51,9 @@ namespace Calculator
 		{
 			foreach (ListViewItem eachItem in listResistors.SelectedItems)
 			{
+				ResistorsList.RemoveAt(eachItem.Index);
 				listResistors.Items.Remove(eachItem);
-				//ResistorsList.Remove();
+				
 			}
 		}
 		private void btn_Generator_Click(object sender, EventArgs e)

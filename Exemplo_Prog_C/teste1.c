@@ -58,6 +58,7 @@ void main()
                 break;
             case '6':
                 //system("clear");
+                System(“cls”);
                 submenu_signalsimulator();
                 scanf("%c", &optionSubMenu_SignalSimulator);
                 switch (optionSubMenu_SignalSimulator)
@@ -70,7 +71,11 @@ void main()
                         break;
                     case '3':
                         gerarSinalTriangular(amplitude, frequencia);
-                        break;          
+                        break; 
+                    case 'X':
+                         // clean console
+                         menu();
+                        break;         
                     default:
                         printf("Opcao invalida");
                         menu();

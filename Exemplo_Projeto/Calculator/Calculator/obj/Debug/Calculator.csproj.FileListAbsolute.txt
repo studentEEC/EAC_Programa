@@ -1,0 +1,11 @@
+C:\Users\anaal\OneDrive\Ambiente de Trabalho\IPCA\04.AL23_24\02.UCs\01.Programacao\01.EAC\05.TrabalhosPráticos\Exemplo\Exemplo_Projeto\Calculator\Calculator\bin\Debug\Calculator.exe.config
+C:\Users\anaal\OneDrive\Ambiente de Trabalho\IPCA\04.AL23_24\02.UCs\01.Programacao\01.EAC\05.TrabalhosPráticos\Exemplo\Exemplo_Projeto\Calculator\Calculator\bin\Debug\Calculator.exe
+C:\Users\anaal\OneDrive\Ambiente de Trabalho\IPCA\04.AL23_24\02.UCs\01.Programacao\01.EAC\05.TrabalhosPráticos\Exemplo\Exemplo_Projeto\Calculator\Calculator\bin\Debug\Calculator.pdb
+C:\Users\anaal\OneDrive\Ambiente de Trabalho\IPCA\04.AL23_24\02.UCs\01.Programacao\01.EAC\05.TrabalhosPráticos\Exemplo\Exemplo_Projeto\Calculator\Calculator\obj\Debug\Calculator.csproj.AssemblyReference.cache
+C:\Users\anaal\OneDrive\Ambiente de Trabalho\IPCA\04.AL23_24\02.UCs\01.Programacao\01.EAC\05.TrabalhosPráticos\Exemplo\Exemplo_Projeto\Calculator\Calculator\obj\Debug\Calculator.csproj.SuggestedBindingRedirects.cache
+C:\Users\anaal\OneDrive\Ambiente de Trabalho\IPCA\04.AL23_24\02.UCs\01.Programacao\01.EAC\05.TrabalhosPráticos\Exemplo\Exemplo_Projeto\Calculator\Calculator\obj\Debug\Calculator.Form1.resources
+C:\Users\anaal\OneDrive\Ambiente de Trabalho\IPCA\04.AL23_24\02.UCs\01.Programacao\01.EAC\05.TrabalhosPráticos\Exemplo\Exemplo_Projeto\Calculator\Calculator\obj\Debug\Calculator.Properties.Resources.resources
+C:\Users\anaal\OneDrive\Ambiente de Trabalho\IPCA\04.AL23_24\02.UCs\01.Programacao\01.EAC\05.TrabalhosPráticos\Exemplo\Exemplo_Projeto\Calculator\Calculator\obj\Debug\Calculator.csproj.GenerateResource.cache
+C:\Users\anaal\OneDrive\Ambiente de Trabalho\IPCA\04.AL23_24\02.UCs\01.Programacao\01.EAC\05.TrabalhosPráticos\Exemplo\Exemplo_Projeto\Calculator\Calculator\obj\Debug\Calculator.csproj.CoreCompileInputs.cache
+C:\Users\anaal\OneDrive\Ambiente de Trabalho\IPCA\04.AL23_24\02.UCs\01.Programacao\01.EAC\05.TrabalhosPráticos\Exemplo\Exemplo_Projeto\Calculator\Calculator\obj\Debug\Calculator.exe
+C:\Users\anaal\OneDrive\Ambiente de Trabalho\IPCA\04.AL23_24\02.UCs\01.Programacao\01.EAC\05.TrabalhosPráticos\Exemplo\Exemplo_Projeto\Calculator\Calculator\obj\Debug\Calculator.pdb
